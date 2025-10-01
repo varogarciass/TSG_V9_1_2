@@ -1,0 +1,71 @@
+/* ===== Estilos globales ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #222;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 2px solid #004080;
+}
+
+header .logo {
+  width: 80px;
+  height: auto;
+  margin-right: 20px;
+}
+
+header h1 {
+  font-size: 1.8em;
+  background: linear-gradient(90deg, #004080, #00aaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== Menú de navegación ===== */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  background: #f4f4f4;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+nav button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #004080;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  background: #00aaff;
+}
+
+/* ===== Contenido principal ===== */
+main {
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* ===== Marca de agua en documentos ===== */
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.08;
+  z-index: -1;
+  width: 400px;
+}
