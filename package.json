@@ -1,10 +1,8 @@
 {
   "name": "talleres-santa-gema",
   "version": "9.1.0",
-  "description": "App de gestión Talleres Santa Gema V9.1",
+  "description": "Gestión contable y administrativa para Talleres Santa Gema",
   "main": "electron/main.js",
-  "author": "Talleres Santa Gema",
-  "license": "ISC",
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder"
@@ -15,22 +13,24 @@
     "files": [
       "app/**/*",
       "electron/**/*",
+      "build/**/*",
       "backup_inicial.json",
-      "build/*",
       "package.json"
     ],
-    "directories": { "buildResources": "build", "output": "dist" },
-    "mac": {
-      "target": ["dmg", "zip"],
-      "icon": "build/icon.icns"
+    "directories": {
+      "buildResources": "build"
     },
     "win": {
-      "target": ["nsis", "zip"],
-      "icon": "build/icon.ico"
+      "icon": "build/icon.ico",
+      "target": "nsis"
+    },
+    "mac": {
+      "icon": "build/icon.icns",
+      "category": "public.app-category.productivity"
     }
   },
   "devDependencies": {
-    "electron": "^25.3.1",
-    "electron-builder": "^24.6.0"
+    "electron": "^25.0.0",
+    "electron-builder": "^24.0.0"
   }
 }
