@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const content = document.getElementById("content");
 
-  // Plantillas con logo como marca de agua
+  // Plantillas con logo como marca de agua y datos del taller
   const sections = {
     ingresos: `
       <h2>Ingresos</h2>
@@ -35,24 +35,110 @@ document.addEventListener("DOMContentLoaded", () => {
       </form>
     `,
     ordenes: `
-      <h2>Órdenes de Trabajo</h2>
-      <div class="plantilla">
+      <div class="plantilla orden">
         <img src="assets/logo.png" class="watermark" alt="Marca de agua">
-        <p>Aquí podrás generar e imprimir órdenes con tu logo y datos.</p>
+        <h2>Orden de Trabajo</h2>
+
+        <div class="datos-taller">
+          <p><b>Talleres Santa Gema</b></p>
+          <p>Pol. Ind. El Perrero - C/Manzanilla 10</p>
+          <p>Albaida del Aljarafe, Sevilla</p>
+          <p>📞 648883020 - ✉️ talleresantagema@gmail.com</p>
+        </div>
+
+        <div class="datos-cliente">
+          <p><b>Cliente:</b> ______________________</p>
+          <p><b>Matrícula:</b> ___________________</p>
+          <p><b>Teléfono:</b> ____________________</p>
+          <p><b>Fecha:</b> ____/____/______</p>
+        </div>
+
+        <h3>Trabajo solicitado</h3>
+        <p>______________________________________________________</p>
+        <p>______________________________________________________</p>
+        <p>______________________________________________________</p>
+
+        <button onclick="window.print()">🖨️ Imprimir</button>
       </div>
     `,
     facturas: `
-      <h2>Facturas</h2>
-      <div class="plantilla">
+      <div class="plantilla factura">
         <img src="assets/logo.png" class="watermark" alt="Marca de agua">
-        <p>Aquí podrás generar facturas con tu logo. Al guardarlas se añadirán a Ingresos.</p>
+        <h2>Factura</h2>
+
+        <div class="datos-taller">
+          <p><b>Talleres Santa Gema</b></p>
+          <p>Pol. Ind. El Perrero - C/Manzanilla 10</p>
+          <p>Albaida del Aljarafe, Sevilla</p>
+          <p>📞 648883020 - ✉️ talleresantagema@gmail.com</p>
+        </div>
+
+        <div class="datos-cliente">
+          <p><b>Cliente:</b> ______________________</p>
+          <p><b>Matrícula:</b> ___________________</p>
+          <p><b>Fecha:</b> ____/____/______</p>
+        </div>
+
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th>Trabajo realizado</th>
+              <th>Importe (€)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>___________________________</td>
+              <td>______</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="total">
+          <p><b>Total:</b> ______ €</p>
+        </div>
+
+        <button onclick="window.print()">🖨️ Imprimir</button>
       </div>
     `,
     presupuestos: `
-      <h2>Presupuestos</h2>
-      <div class="plantilla">
+      <div class="plantilla presupuesto">
         <img src="assets/logo.png" class="watermark" alt="Marca de agua">
-        <p>Aquí podrás hacer presupuestos bonitos para clientes.</p>
+        <h2>Presupuesto</h2>
+
+        <div class="datos-taller">
+          <p><b>Talleres Santa Gema</b></p>
+          <p>Pol. Ind. El Perrero - C/Manzanilla 10</p>
+          <p>Albaida del Aljarafe, Sevilla</p>
+          <p>📞 648883020 - ✉️ talleresantagema@gmail.com</p>
+        </div>
+
+        <div class="datos-cliente">
+          <p><b>Cliente:</b> ______________________</p>
+          <p><b>Matrícula:</b> ___________________</p>
+          <p><b>Fecha:</b> ____/____/______</p>
+        </div>
+
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Importe (€)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>___________________________</td>
+              <td>______</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="total">
+          <p><b>Total estimado:</b> ______ €</p>
+        </div>
+
+        <button onclick="window.print()">🖨️ Imprimir</button>
       </div>
     `,
     agenda: `
