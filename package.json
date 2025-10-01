@@ -2,6 +2,7 @@
   "name": "talleres-santa-gema",
   "version": "9.1.0",
   "description": "Gestión contable y administrativa para Talleres Santa Gema",
+  "author": "Talleres Santa Gema",
   "main": "electron/main.js",
   "scripts": {
     "start": "electron .",
@@ -29,7 +30,7 @@
       "target": "nsis"
     }
   },
-  "dependencies": {
+  "devDependencies": {
     "electron": "^25.0.0",
     "electron-builder": "^24.0.0"
   }
