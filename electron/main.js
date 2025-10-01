@@ -1,42 +1,33 @@
-// electron/main.js - Punto de entrada de la app de escritorio
-
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
-let mainWindow;
-
 function createWindow() {
-  mainWindow = new BrowserWindow({
+  const mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true,
-      contextIsolation: false
     },
-    icon: path.join(__dirname, '../build/icon.ico')
+    icon: path.join(__dirname, '../build/icon.png') // icono para Mac/Linux
   });
 
+  // Cargar la app principal
   mainWindow.loadFile(path.join(__dirname, '../app/index.html'));
 
-  // Abrir devtools solo para pruebas (comentar en producción)
+  // Opcional: abrir herramientas de desarrollo en modo dev
   // mainWindow.webContents.openDevTools();
-
-  mainWindow.on('closed', () => {
-    mainWindow = null;
-  });
 }
 
-app.whenReady().then(createWindow);
+// Cuando la app está lista, abrir ventana
+app.whenReady().then(() => {
+  createWindow();
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
+  app.on('activate', function () {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
 });
 
-app.on('activate', () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow();
-  }
+// Cerrar app en todos los sistemas excepto macOS
+app.on('window-all-closed', function () {
+  if (process.platform !== 'darwin') app.quit();
 });
