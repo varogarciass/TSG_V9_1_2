@@ -1,7 +1,7 @@
 name: Build App Mac
 
 on:
-  workflow_dispatch:   # lo lanzas manualmente desde Actions
+  workflow_dispatch:   # Se ejecuta manualmente desde Actions
 
 jobs:
   build-mac:
@@ -19,8 +19,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build Mac DMG
-        run: npm run dist
+      - name: Build Mac DMG (sin publicar en GitHub)
+        run: npm run dist -- --publish=never
 
       - name: Upload DMG
         uses: actions/upload-artifact@v4
