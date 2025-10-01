@@ -59,7 +59,45 @@ h2 {
   margin-top: 0;
 }
 
-/* ===== Marca de agua en documentos ===== */
+/* ===== Plantillas ===== */
+.plantilla {
+  position: relative;
+  padding: 40px;
+  border: 1px solid #ccc;
+  margin: 20px auto;
+  max-width: 800px;
+  background: #fff;
+}
+
+.plantilla h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.datos-taller, .datos-cliente {
+  margin-bottom: 20px;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabla th, .tabla td {
+  border: 1px solid #999;
+  padding: 8px;
+  text-align: left;
+}
+
+.total {
+  margin-top: 20px;
+  text-align: right;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* ===== Marca de agua ===== */
 .watermark {
   position: absolute;
   top: 50%;
@@ -68,4 +106,30 @@ h2 {
   opacity: 0.08;
   z-index: -1;
   width: 400px;
+}
+
+/* ===== Estilos de impresión ===== */
+@media print {
+  body * {
+    visibility: hidden; /* Oculta todo */
+  }
+
+  .plantilla, .plantilla * {
+    visibility: visible; /* Solo muestra la plantilla */
+  }
+
+  .plantilla {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    border: none;
+    box-shadow: none;
+  }
+
+  button {
+    display: none !important; /* Ocultar botones en impresión */
+  }
 }
