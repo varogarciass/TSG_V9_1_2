@@ -20,16 +20,16 @@
     "directories": {
       "buildResources": "build"
     },
-    "win": {
-      "icon": "build/icon.ico",
-      "target": "nsis"
-    },
     "mac": {
       "icon": "build/icon.icns",
       "category": "public.app-category.productivity"
+    },
+    "win": {
+      "icon": "build/icon.ico",
+      "target": "nsis"
     }
   },
-  "devDependencies": {
+  "dependencies": {
     "electron": "^25.0.0",
     "electron-builder": "^24.0.0"
   }
